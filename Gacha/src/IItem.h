@@ -7,6 +7,7 @@
 
 #ifndef IITEM_H_
 #define IITEM_H_
+
 #include <string>
 
 class IItem {

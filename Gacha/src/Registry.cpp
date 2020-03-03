@@ -6,6 +6,7 @@
  */
 
 #include "Registry.h"
+#include "Item.h"
 
 #include <vector>
 
@@ -31,3 +32,7 @@ void Registry::add_item(std::shared_ptr<IItem> item) {
 	item->set_cummulative_weight(this->cummulative_weight);
 	this->items.push_back(item);
 }
+/*
+std::unique_ptr<IItemIterator> Registry::create_iterator() {
+	return( std::make_unique<ItemIterator>(this->items) );
+}*/

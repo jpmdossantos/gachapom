@@ -7,7 +7,6 @@
 
 #ifndef IROLLER_H_
 #define IROLLER_H_
-#include "Registry.h"
 
 class IRoller {
 public:
