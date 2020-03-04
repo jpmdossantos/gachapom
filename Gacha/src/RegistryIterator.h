@@ -17,6 +17,8 @@ class RegistryIterator: public IRegistryIterator {
 public:
 	RegistryIterator( std::vector< std::shared_ptr<IItem> > );
 	bool HasNext() override;
+	std::shared_ptr<IItem> Next() override;
+
 private:
 	int current_position = 0;
 	std::vector<std::shared_ptr<IItem>> items_list;

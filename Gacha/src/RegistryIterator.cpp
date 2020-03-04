@@ -14,7 +14,12 @@ RegistryIterator::RegistryIterator(
 }
 
 bool RegistryIterator::HasNext() {
-	return true;
+	auto number_of_items = this->items_list.size();
+	return ((int)number_of_items > this->current_position);
 }
 
-
+std::shared_ptr<IItem> RegistryIterator::Next() {
+	auto item = this->items_list[this->current_position];
+	this->current_position++;
+	return item;
+}

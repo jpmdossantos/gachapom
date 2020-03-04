@@ -15,6 +15,10 @@ using namespace std;
 int main() {
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
 	Registry item_registry;
-	Roller gachapom(item_registry);
+	//Registry* ptr = &item_registry;
+	Roller gachapom(&item_registry);
+	gachapom.roll();
+
+
 	return 0;
 }

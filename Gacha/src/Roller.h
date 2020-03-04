@@ -12,9 +12,9 @@
 #include "IRoller.h"
 
 class Roller: public IRoller {
-	Registry items_registry;
+	IRegistry* items_registry;
 public:
-	Roller(Registry);
+	Roller(IRegistry*);
 	void roll() const override;
 };
 
