@@ -19,7 +19,8 @@ public:
 	virtual ~IRegistry() {}
 	virtual void add_item(std::shared_ptr<IItem>) = 0;
 	virtual void load_items() = 0;
-	virtual std::shared_ptr<IRegistryIterator> create_iterator()=0;
+	virtual int getCummulativeWeight() = 0;
+	virtual std::shared_ptr<IRegistryIterator> create_iterator() = 0;
 };
 
 #endif /* IREGISTRY_H_ */

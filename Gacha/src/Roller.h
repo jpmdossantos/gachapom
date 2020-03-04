@@ -10,6 +10,9 @@
 
 #include "Registry.h"
 #include "IRoller.h"
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
 
 class Roller: public IRoller {
 	IRegistry* items_registry;

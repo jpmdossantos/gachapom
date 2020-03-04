@@ -17,7 +17,10 @@ int main() {
 	Registry item_registry;
 	//Registry* ptr = &item_registry;
 	Roller gachapom(&item_registry);
-	gachapom.roll();
+	for (int i = 0; i <= 10; i++)
+	{
+		gachapom.roll();
+	}
 
 
 	return 0;

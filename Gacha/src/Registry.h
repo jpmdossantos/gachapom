@@ -16,17 +16,16 @@
 class Registry: public IRegistry {
 public:
 	Registry();
-	Registry(const Registry&);
 	void add_item(std::shared_ptr<IItem>) override;
 	void load_items() override;
-	int getCummulativeWeight() const {return cummulative_weight;}
 	const std::vector<std::shared_ptr<IItem> >& getItems() const {return items;}
 	std::shared_ptr<IRegistryIterator> create_iterator() override;
+	int getCummulativeWeight() override;
 
 private:
 	std::vector<std::shared_ptr<IItem>> items;
 	std::vector<int> numbers;
-	int cummulative_weight=0;
+	int cummulative_weight = 0;
 };
 
 #endif /* REGISTRY_H_ */

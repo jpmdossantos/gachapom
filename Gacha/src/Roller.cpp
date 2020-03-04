@@ -6,19 +6,24 @@
  */
 
 #include "Roller.h"
-#include <iostream>
 
 Roller::Roller(IRegistry *registry) {
 	this->items_registry = registry;
+	srand (time(NULL));
 }
 
 
 void Roller::roll() const {
 	auto registry_iterator = items_registry->create_iterator();
+	int random_number = std::rand()%this->items_registry->getCummulativeWeight() + 1;
 	while (registry_iterator->HasNext())
 	{
 		auto item = registry_iterator->Next();
-		std::cout << item->get_cummulative_weight()<<std::endl;
+		if (item->get_cummulative_weight() >= random_number)
+		{
+			std::cout << item->get_name() << std::endl;
+			break;
+		}
 	}
 }
 
