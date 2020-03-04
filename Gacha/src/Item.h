@@ -17,7 +17,8 @@ public:
 	Item(std::string, int);
 	std::string get_name() const override;
 	int get_weight() const override;
-	void set_cummulative_weight(const int);
+	void set_cummulative_weight(const int) override;
+	int get_cummulative_weight() override;
 
 private:
 	std::string name;

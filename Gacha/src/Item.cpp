@@ -22,3 +22,7 @@ int Item::get_weight() const{
 void Item::set_cummulative_weight(const int weight) {
 	this->cummulative_weigth = weight;
 }
+
+int Item::get_cummulative_weight() {
+	return this->cummulative_weigth;
+}

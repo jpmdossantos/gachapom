@@ -16,6 +16,7 @@ public:
 	virtual std::string get_name() const = 0;
 	virtual int get_weight() const = 0;
 	virtual void set_cummulative_weight(const int) = 0;
+	virtual int get_cummulative_weight() = 0;
 };
 
 #endif /* IITEM_H_ */

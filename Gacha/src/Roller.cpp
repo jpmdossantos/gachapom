@@ -18,7 +18,7 @@ void Roller::roll() const {
 	while (registry_iterator->HasNext())
 	{
 		auto item = registry_iterator->Next();
-		std::cout << item->get_weight()<<std::endl;
+		std::cout << item->get_cummulative_weight()<<std::endl;
 	}
 }
 

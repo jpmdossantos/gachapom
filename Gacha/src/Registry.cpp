@@ -27,7 +27,7 @@ void Registry::load_items() {
 
 void Registry::add_item(std::shared_ptr<IItem> item) {
 	this->cummulative_weight += item->get_weight();
-//	item->set_cummulative_weight(this->cummulative_weight);
+	item->set_cummulative_weight(this->cummulative_weight);
 	this->items.push_back(item);
 }
 
