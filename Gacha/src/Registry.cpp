@@ -14,25 +14,24 @@ Registry::Registry() {
 	this->load_items();
 }
 
+Registry::Registry(const Registry& registry)
+{
+	this->cummulative_weight = registry.getCummulativeWeight();
+	this->items = registry.getItems();
+}
+
 void Registry::load_items() {
-	Item item1("teste", 1);
-	Item item2("teste2", 3);
-
-
-	std::shared_ptr<IItem> item3 = std::make_shared<Item> ("teste3", 5);
-	auto item4 = std::make_shared<Item> ("teste4", 7);
-	auto item5 = std::make_shared<Item> ("teste5", 11);
-
-	add_item(item3);
-	add_item(item4);
+	this->add_item(std::make_shared<Item>("teste",1));
+	this->add_item(std::make_shared<Item>("teste",5));
 }
 
 void Registry::add_item(std::shared_ptr<IItem> item) {
 	this->cummulative_weight += item->get_weight();
-	item->set_cummulative_weight(this->cummulative_weight);
+//	item->set_cummulative_weight(this->cummulative_weight);
 	this->items.push_back(item);
 }
-/*
-std::unique_ptr<IItemIterator> Registry::create_iterator() {
-	return( std::make_unique<ItemIterator>(this->items) );
-}*/
+
+std::shared_ptr<IRegistryIterator> Registry::create_iterator() {
+	auto ptr = std::make_shared<RegistryIterator>(this->items);
+	return ptr;
+}

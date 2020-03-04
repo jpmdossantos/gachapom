@@ -9,6 +9,7 @@
 #define IREGISTRY_H_
 
 #include <memory>
+#include "IRegistryIterator.h"
 
 //class IItemIterator;
 class IItem;
@@ -18,7 +19,7 @@ public:
 	virtual ~IRegistry() {}
 	virtual void add_item(std::shared_ptr<IItem>) = 0;
 	virtual void load_items() = 0;
-//	virtual std::unique_ptr<IItemIterator> create_iterator();
+	virtual std::shared_ptr<IRegistryIterator> create_iterator()=0;
 };
 
 #endif /* IREGISTRY_H_ */
