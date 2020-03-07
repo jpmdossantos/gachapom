@@ -6,12 +6,13 @@
 #define SRC_IITEMLOADER_H
 
 #include <vector>
+#include <memory>
 #include "IItem.h"
 
 class IItemLoader {
 public:
     virtual ~IItemLoader() {}
-    virtual std::vector<IItem> Parse() = 0;
+    virtual std::vector< std::shared_ptr<IItem> > Parse() = 0;
 };
 
 #endif //SRC_IITEMLOADER_H

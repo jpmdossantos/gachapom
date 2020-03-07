@@ -12,10 +12,11 @@
 #include <memory>
 #include "IRegistry.h"
 #include "RegistryIterator.h"
+#include "IItemLoader.h"
 
 class Registry: public IRegistry {
 public:
-	Registry();
+	Registry(IItemLoader*);
 	void add_item(std::shared_ptr<IItem>) override;
 	void load_items() override;
 	const std::vector<std::shared_ptr<IItem> >& getItems() const {return items;}
@@ -24,7 +25,7 @@ public:
 
 private:
 	std::vector<std::shared_ptr<IItem>> items;
-	std::vector<int> numbers;
+	IItemLoader* loader;
 	int cummulative_weight = 0;
 };
 

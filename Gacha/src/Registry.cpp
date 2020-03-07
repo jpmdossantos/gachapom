@@ -7,19 +7,23 @@
 
 #include "Registry.h"
 #include "Item.h"
+#include "ItemLoader.h"
 
 #include <vector>
 
-Registry::Registry() {
-	this->load_items();
+Registry::Registry(IItemLoader* loader) {
+    this->loader = loader;
+    this->load_items();
 }
 
 void Registry::load_items() {
+    this->items = this->loader->Parse();
 	this->add_item(std::make_shared<Item>("teste1",1));
 	this->add_item(std::make_shared<Item>("teste2",3));
 	this->add_item(std::make_shared<Item>("teste3",5));
 	this->add_item(std::make_shared<Item>("teste4",7));
 	this->add_item(std::make_shared<Item>("teste5",11));
+
 }
 
 void Registry::add_item(std::shared_ptr<IItem> item) {
@@ -36,3 +40,4 @@ std::shared_ptr<IRegistryIterator> Registry::create_iterator() {
 int Registry::getCummulativeWeight() {
 	return this->cummulative_weight;
 }
+

@@ -8,8 +8,8 @@ ItemLoader::ItemLoader(std::string path) {
     this->path = path;
 }
 
-std::vector<IItem> ItemLoader::Parse() {
-    return std::vector<IItem>();
+std::vector<std::shared_ptr<IItem>> ItemLoader::Parse() {
+    return std::vector<std::shared_ptr<IItem>>();
 }
 
 

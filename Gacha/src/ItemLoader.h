@@ -7,11 +7,12 @@
 
 
 #include "IItemLoader.h"
+#include <memory>
 
 class ItemLoader: public IItemLoader {
 public:
     ItemLoader(std::string);
-    std::vector<IItem> Parse() override;
+    std::vector<std::shared_ptr<IItem>> Parse() override;
 private:
     std::string path;
 };
