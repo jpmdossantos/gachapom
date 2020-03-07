@@ -8,6 +8,7 @@
 
 #include "IItemLoader.h"
 #include <memory>
+#include <fstream>
 
 class ItemLoader: public IItemLoader {
 public:
