@@ -10,7 +10,7 @@
 
 class IRoller {
 public:
-	virtual ~IRoller() {}
+	virtual ~IRoller() =default;
 	virtual void roll() const = 0;
 };
 

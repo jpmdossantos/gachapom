@@ -20,8 +20,6 @@ Registry::Registry(IItemLoader* loader) {
 void Registry::load_items() {
     std::vector<std::shared_ptr<IItem>> parsed_items = this->loader->Parse();
     for (auto item : parsed_items) {this->add_item(item);}
-	this->add_item(std::make_shared<Item>("ala",1));
-	std::cout << "Tamanho do array pos: "<<this->items.size()<<"\n";
 }
 
 void Registry::add_item(std::shared_ptr<IItem> item) {

@@ -27,7 +27,6 @@ std::vector<std::shared_ptr<IItem>> ItemLoader::Parse() {
         auto item = std::make_shared<Item>(name,weightint);
         items.push_back(item);
     }
-    std::cout <<"Dados carregados: "<<items.size()<<"\n";
     file.close();
     return items;
 }

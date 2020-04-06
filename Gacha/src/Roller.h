@@ -13,12 +13,14 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
+#include <random>
 
 class Roller: public IRoller {
 	IRegistry* items_registry;
 public:
 	Roller(IRegistry*);
 	void roll() const override;
+
 };
 
 #endif /* ROLLER_H_ */
